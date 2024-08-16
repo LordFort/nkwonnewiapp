@@ -176,7 +176,7 @@ class TDummyData {
     CategoryModel(id: '4', image: TImages.multimediaIcon, name: 'Multimedia', isFeatured: true),
     CategoryModel(id: '6', image: TImages.accessoriesIcon, name: 'Accessories', isFeatured: true),
     CategoryModel(id: '7', image: TImages.outletIcon, name: 'outlet', isFeatured: true),
-    CategoryModel(id: '14', image: TImages.enterpriseIcon, name: 'Enterprise', isFeatured: true),
+    CategoryModel(id: '24', image: TImages.enterpriseIcon, name: 'Enterprise', isFeatured: true),
 
     ///subcategories
     CategoryModel(id: '8', image: TImages.appleLogo, name: 'Apple Smartphone', parentId: '1', isFeatured: false),
@@ -204,53 +204,67 @@ class TDummyData {
     BrandModel(id: '1', image: TImages.samsungLogo, name: 'Samsung', productsCount: 265, isFeatured: true),
     BrandModel(id: '2', image: TImages.googleLogo, name: 'Google', productsCount: 95, isFeatured: true),
     BrandModel(id: '8', image: TImages.nokiaLogo, name: 'Nokia', productsCount: 36, isFeatured: false),
-    BrandModel(id: '9', image: TImages.microsoftLogo, name: 'Microsoft', productsCount: 36, isFeatured: false),
-    BrandModel(id: '5', image: TImages.appleLogo, name: 'Apple', productsCount: 16, isFeatured: true),
-    BrandModel(id: '10', image: TImages.xiaomiLogo, name: 'Xiaomi', productsCount: 36, isFeatured: false),
-    BrandModel(id: '3', image: TImages.lenovoLogo, name: 'Lenovo', productsCount: 36, isFeatured: true),
-    BrandModel(id: '4', image: TImages.motorolaLogo, name: 'Motorola', productsCount: 65, isFeatured: false),
-    BrandModel(id: '6', image: TImages.zaraLogo, name: 'ZARA', productsCount: 36, isFeatured: false),
-    BrandModel(id: '7', image: TImages.samsungLogo, name: 'Samsung', productsCount: 36, isFeatured: false),
+    BrandModel(id: '5', image: TImages.microsoftLogo, name: 'Microsoft', productsCount: 36, isFeatured: false),
+    BrandModel(id: '3', image: TImages.appleLogo, name: 'Apple', productsCount: 16, isFeatured: true),
+    BrandModel(id: '4', image: TImages.xiaomiLogo, name: 'Xiaomi', productsCount: 36, isFeatured: false),
+    BrandModel(id: '6', image: TImages.lenovoLogo, name: 'Lenovo', productsCount: 36, isFeatured: true),
+    BrandModel(id: '7', image: TImages.motorolaLogo, name: 'Motorola', productsCount: 65, isFeatured: false),
+    BrandModel(id: '9', image: TImages.electronicsIcon, name: 'other brands', productsCount: 36, isFeatured: false),
+    BrandModel(id: '10', image: TImages.sonyIcon, name: 'Sony', productsCount: 36, isFeatured: false),
+
   ];
 
   /// -- List of all Brand Categories
   static final List<BrandCategoryModel> brandCategory = [
-    BrandCategoryModel(brandId: '1', categoryId: '1'),
-    BrandCategoryModel(brandId: '1', categoryId: '8'),
     BrandCategoryModel(brandId: '1', categoryId: '9'),
-    BrandCategoryModel(brandId: '1', categoryId: '10'),
-    BrandCategoryModel(brandId: '1', categoryId: '11'),
-    BrandCategoryModel(brandId: '1', categoryId: '12'),
-    BrandCategoryModel(brandId: '1', categoryId: '13'),
-    BrandCategoryModel(brandId: '1', categoryId: '14'),
+    BrandCategoryModel(brandId: '1', categoryId: '16'),
+    BrandCategoryModel(brandId: '1', categoryId: '22'),
+    BrandCategoryModel(brandId: '1', categoryId: '1'),
+    BrandCategoryModel(brandId: '1', categoryId: '2'),
+    BrandCategoryModel(brandId: '1', categoryId: '5'),
+    BrandCategoryModel(brandId: '1', categoryId: '4'),
 
+
+    BrandCategoryModel(brandId: '2', categoryId: '11'),
     BrandCategoryModel(brandId: '2', categoryId: '1'),
-    BrandCategoryModel(brandId: '2', categoryId: '8'),
-    BrandCategoryModel(brandId: '2', categoryId: '9'),
-    BrandCategoryModel(brandId: '2', categoryId: '10'),
-    BrandCategoryModel(brandId: '3', categoryId: '1'),
+
+    BrandCategoryModel(brandId: '3', categoryId: '4'),
     BrandCategoryModel(brandId: '3', categoryId: '8'),
-    BrandCategoryModel(brandId: '3', categoryId: '9'),
-    BrandCategoryModel(brandId: '3', categoryId: '10'),
+    BrandCategoryModel(brandId: '3', categoryId: '15'),
+    BrandCategoryModel(brandId: '3', categoryId: '21'),
+    BrandCategoryModel(brandId: '3', categoryId: '1'),
+    BrandCategoryModel(brandId: '3', categoryId: '2'),
+    BrandCategoryModel(brandId: '3', categoryId: '3'),
+
+
     BrandCategoryModel(brandId: '4', categoryId: '1'),
-    BrandCategoryModel(brandId: '4', categoryId: '8'),
-    BrandCategoryModel(brandId: '4', categoryId: '9'),
     BrandCategoryModel(brandId: '4', categoryId: '10'),
-    BrandCategoryModel(brandId: '5', categoryId: '15'),
+    BrandCategoryModel(brandId: '4', categoryId: '17'),
+    BrandCategoryModel(brandId: '4', categoryId: '2'),
+
+    BrandCategoryModel(brandId: '5', categoryId: '18'),
     BrandCategoryModel(brandId: '5', categoryId: '2'),
-    BrandCategoryModel(brandId: '10', categoryId: '2'),
-    BrandCategoryModel(brandId: '10', categoryId: '14'),
-    BrandCategoryModel(brandId: '6', categoryId: '3'),
-    BrandCategoryModel(brandId: '6', categoryId: '16'),
-    BrandCategoryModel(brandId: '7', categoryId: '2'),
-    BrandCategoryModel(brandId: '8', categoryId: '5'),
-    BrandCategoryModel(brandId: '8', categoryId: '11'),
+
+    BrandCategoryModel(brandId: '6', categoryId: '2'),
+    BrandCategoryModel(brandId: '6', categoryId: '19'),
+
+    BrandCategoryModel(brandId: '7', categoryId: '14'),
+    BrandCategoryModel(brandId: '7', categoryId: '1'),
+
     BrandCategoryModel(brandId: '8', categoryId: '12'),
-    BrandCategoryModel(brandId: '8', categoryId: '13'),
-    BrandCategoryModel(brandId: '9', categoryId: '5'),
-    BrandCategoryModel(brandId: '9', categoryId: '11'),
-    BrandCategoryModel(brandId: '9', categoryId: '12'),
+    BrandCategoryModel(brandId: '8', categoryId: '1'),
+
+    BrandCategoryModel(brandId: '9', categoryId: '6'),
+    BrandCategoryModel(brandId: '9', categoryId: '7'),
+    BrandCategoryModel(brandId: '9', categoryId: '28'),
+    BrandCategoryModel(brandId: '9', categoryId: '29'),
     BrandCategoryModel(brandId: '9', categoryId: '13'),
+    BrandCategoryModel(brandId: '9', categoryId: '27'),
+
+    BrandCategoryModel(brandId: '10', categoryId: '1'),
+    BrandCategoryModel(brandId: '10', categoryId: '13'),
+
+
   ];
 
   /// -- List of all Product Categories
@@ -350,15 +364,15 @@ class TDummyData {
       price: 633,
       isFeatured: true,
       thumbnail: TImages.productImage116,
-      description: 'Green Nike sports shoe',
-      brand: BrandModel(id: '1', image: TImages.nikeLogo, name: 'Nike', productsCount: 265, isFeatured: true),
-      images: [TImages.productImage1, TImages.productImage23, TImages.productImage21, TImages.productImage9],
+      description: 'Apple iPhone 13 128GB Blue, green, red, purple & white, 15.4 cm (6.1 inch) Super Retina XDR display Cinema mode automatically adds shallow depth of field and shifts the focus in your videos12 MP TrueDepth front camera with night mode, 4K HDR recording with Dolby VisionA15 Bionic chip for super-fast performanceUp to 19 hours of video playback5G for super-fast downloads and streaming in the highest qualityiOS 15 is packed with new features so you can do more with your iPhone than ever before Supports MagSafe accessories for easy docking and faster wireless charging',
+      brand: BrandModel(id: '3', image: TImages.appleLogo, name: 'Apple', productsCount: 265, isFeatured: true),
+      images: [TImages.productImage115, TImages.productImage116, TImages.productImage117, TImages.productImage119, TImages.productImage120,],
       salePrice: 30,
       sku: 'ABR4568',
-      categoryId: '1',
+      categoryId: '8',
       productAttributes: [
-        ProductAttributeModel(name: 'Color', values: ['Green', 'Black', 'Red']),
-        ProductAttributeModel(name: 'Size', values: ['EU 30', 'EU 32', 'EU 34']),
+        ProductAttributeModel(name: 'Color', values: ['Green', 'Black', 'Red','blue','purple','white']),
+        ProductAttributeModel(name: 'Memory Size', values: ['128GB', '256GB', '512GB']),
       ],
       productVariations: [
         ProductVariationModel(
@@ -366,42 +380,60 @@ class TDummyData {
             stock: 34,
             price: 134,
             salePrice: 122.6,
-            image: TImages.productImage1,
+            image: TImages.productImage115,
             description: 'This is a Product description for Green Nike sports shoe.',
-            attributeValues: {'Color': 'Green', 'Size': 'EU 34'}),
+            attributeValues: {'Color': 'Green', 'Memory Size': '128GB'}),
+
         ProductVariationModel(
-            id: '2', stock: 15, price: 132, image: TImages.productImage23, attributeValues: {'Color': 'Black', 'Size': 'EU 32'}),
+            id: '2', stock: 15, price: 132, image: TImages.productImage116, attributeValues: {'Color': 'Blue', 'Size': '128GB'}),
         ProductVariationModel(
-            id: '3', stock: 0, price: 234, image: TImages.productImage23, attributeValues: {'Color': 'Black', 'Size': 'EU 34'}),
+            id: '3', stock: 0, price: 234, image: TImages.productImage117, attributeValues: {'Color': 'Green', 'Size': '128GB'}),
         ProductVariationModel(
-            id: '4', stock: 222, price: 232, image: TImages.productImage1, attributeValues: {'Color': 'Green', 'Size': 'EU 32'}),
+            id: '4', stock: 222, price: 232, image: TImages.productImage118, attributeValues: {'Color': 'Red', 'Size': '128GB'}),
         ProductVariationModel(
-            id: '5', stock: 0, price: 334, image: TImages.productImage21, attributeValues: {'Color': 'Red', 'Size': 'EU 34'}),
+            id: '5', stock: 0, price: 334, image: TImages.productImage119, attributeValues: {'Color': 'Purple', 'Size': '128GB'}),
         ProductVariationModel(
-            id: '6', stock: 11, price: 332, image: TImages.productImage21, attributeValues: {'Color': 'Red', 'Size': 'EU 32'}),
+            id: '6', stock: 11, price: 332, image: TImages.productImage120, attributeValues: {'Color': 'white', 'Size': '128GB'}),
       ],
       productType: ProductType.variable.toString(),
     ),
     ProductModel(
       id: '002',
-      title: 'Blue T-shirt for all ages',
+      title: 'Samsung Galaxy A55 5G 128GB (A556B) Awesome Iceblue',
       stock: 15,
       price: 35,
       isFeatured: true,
-      thumbnail: TImages.productImage69,
+      thumbnail: TImages.productImage3,
       description:
-      'This is a Product description for Blue Nike Sleeve less vest. There are more things that can be added but i am just practicing and nothing else.',
-      brand: BrandModel(id: '6', image: TImages.zaraLogo, name: 'ZARA'),
-      images: [TImages.productImage68, TImages.productImage69, TImages.productImage5],
+      'The Samsung Galaxy A55 offers impressive features for different moments in your life. With AI-assisted portrait shots at night and action-packed 4K videos, you can capture wow moments. The powerful processor and large Super AMOLED display ensure high-speed experiences.The high level of data security and IP67 certification make the smartphone ideal for private moments. And with 8 GB RAM and up to 256 GB internal storage, you have enough space for productive moments and easy sharing in the Galaxy Ecosystem. It sounds like a versatile and powerful device',
+      brand: BrandModel(id: '1', image: TImages.samsungLogo, name: 'Samsung'),
+      images: [TImages.productImage1, TImages.productImage2, TImages.productImage3, TImages.productImage4],
       salePrice: 30,
       sku: 'ABR4568',
-      categoryId: '16',
+      categoryId: '9',
       productAttributes: [
-        ProductAttributeModel(name: 'Size', values: ['EU34', 'EU32']),
-        ProductAttributeModel(name: 'Color', values: ['Green', 'Red', 'Blue']),
+        ProductAttributeModel(name: 'Size', values: ['128GB', '256GB']),
+        ProductAttributeModel(name: 'Color', values: ['Black','Purple','yellow', 'Blue']),
       ],
-      productType: ProductType.single.toString(),
-    ),
+  productVariations: [
+  ProductVariationModel(
+  id: '1',
+  stock: 34,
+  price: 134,
+  salePrice: 122.6,
+  image: TImages.productImage1,
+  description: 'This is a Product description for Green Nike sports shoe.',
+  attributeValues: {'Color': 'Purple', 'Memory Size': '128GB'}),
+
+  ProductVariationModel(
+  id: '2', stock: 15, price: 132, image: TImages.productImage2, attributeValues: {'Color': 'Black', 'Size': '128GB'}),
+  ProductVariationModel(
+  id: '3', stock: 0, price: 234, image: TImages.productImage3, attributeValues: {'Color': 'Yellow', 'Size': '128GB'}),
+  ProductVariationModel(
+  id: '4', stock: 222, price: 232, image: TImages.productImage4, attributeValues: {'Color': 'Red', 'Size': '128GB'}),
+  ],
+  productType: ProductType.variable.toString(),
+  ),
     ProductModel(
       id: '003',
       title: 'Leather brown Jacket',

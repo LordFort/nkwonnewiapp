@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 import 'package:iconsax/iconsax.dart';
 
+import '../../../../features/shops/screens/search/search.dart';
 import '../../../../features/utils/constants/colors.dart';
 import '../../../../features/utils/constants/sizes.dart';
 import '../../../../features/utils/device/device_utility.dart';
@@ -19,16 +22,15 @@ class TSearchContainer extends StatelessWidget {
 
   final String text;
   final IconData? icon;
-  final bool showBackground, showBorder;
   final VoidCallback? onTap;
+  final bool showBackground, showBorder;
   final EdgeInsetsGeometry padding;
 
   @override
   Widget build(BuildContext context) {
     final dark = THelperFunctions.isDarkMode(context);
-
     return GestureDetector(
-      onTap: onTap,
+      onTap: () => Get.to(() => SearchScreen()),
       child: Padding(
         padding: padding,
         child: Container(
@@ -37,25 +39,17 @@ class TSearchContainer extends StatelessWidget {
           decoration: BoxDecoration(
             color: showBackground
                 ? dark
-                    ? TColors.black
-                    : TColors.light
+                ? TColors.dark
+                : TColors.light
                 : Colors.transparent,
             borderRadius: BorderRadius.circular(TSizes.cardRadiusLg),
             border: showBorder ? Border.all(color: TColors.grey) : null,
           ),
           child: Row(
             children: [
-              Icon(
-                icon,
-                color: TColors.darkerGrey,
-              ),
-              const SizedBox(
-                width: TSizes.spaceBtwItems,
-              ),
-              Text(
-                text,
-                style: Theme.of(context).textTheme.bodySmall,
-              )
+              Icon(icon, color: dark ? TColors.darkerGrey : Colors.grey),
+              const SizedBox(width: TSizes.spaceBtwItems),
+              Text(text, style: Theme.of(context).textTheme.bodySmall),
             ],
           ),
         ),

@@ -1,39 +1,51 @@
 import 'package:flutter/material.dart';
-import 'package:sparvoll_the_app/features/shops/screens/product_detail/Product_reviews/widgets/rating_progeress_indicator.dart';
-import 'package:sparvoll_the_app/features/shops/screens/product_detail/Product_reviews/widgets/user_review_card.dart';
+
 import '../../../../../../common/widgets/App_bar/appbar.dart';
-import '../../../../../../common/widgets/products/Ratings/rating_indicator.dart';
 import '../../../../../utils/constants/sizes.dart';
+import '../../../../controllers/dummy_data.dart';
+
+import 'widgets/progress_indicator_and_rating.dart';
+import 'widgets/rating_star.dart';
+import 'widgets/review_details_container.dart';
 
 class ProductReviewsScreen extends StatelessWidget {
   const ProductReviewsScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return   Scaffold(
-      appBar: const TAppBar(title: Text('Reviews and Ratings', ), showBackArrow: true,
-      ),
-      body: SingleChildScrollView(
-        child: Padding(padding: const EdgeInsets.all(TSizes.defaultSpace),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            const Text("Ratings and reviews are verified and are from people who use the same type of device that you use."),
-            const SizedBox(height: TSizes.spaceBtwItems,),
-            const TOverallProductRating(),
-            const TRatingIndicator(rating: 3.5,),
-            Text('12,611', style: Theme.of(context).textTheme.bodySmall,),
-            const SizedBox(height: TSizes.spaceBtwSections,),
-            const UserReviewCard(),
-            const UserReviewCard(),
-          ],
-        ),
+    return Scaffold(
+      /// -- Appbar
+      appBar: const TAppBar(title: Text('Reviews & Ratings'), showBackArrow: true),
 
+      /// -- Body
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.all(TSizes.defaultSpace),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              /// -- Reviews List
+              const Text("Ratings and reviews are verified and are from people who use the same type of device that you use."),
+              const SizedBox(height: TSizes.spaceBtwItems),
+
+              /// Overall Product Ratings
+              const TOverallProductRating(),
+              const TRatingBarIndicator(rating: 3.5),
+              const Text("12,611"),
+              const SizedBox(height: TSizes.spaceBtwSections),
+
+              /// User Reviews List
+              ListView.separated(
+                shrinkWrap: true,
+                itemCount: TDummyData.productReviews.length,
+                physics: const NeverScrollableScrollPhysics(),
+                separatorBuilder: (_, __) => const SizedBox(height: TSizes.spaceBtwSections),
+                itemBuilder: (_, index) => UserReviewCard(productReview: TDummyData.productReviews[index]),
+              )
+            ],
+          ),
         ),
       ),
     );
   }
 }
-
-
-

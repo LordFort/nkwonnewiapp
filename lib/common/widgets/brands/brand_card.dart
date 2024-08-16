@@ -48,7 +48,6 @@ class TBrandCard extends StatelessWidget {
                 image: brand.image,
                 isNetworkImage: true,
                 backgroundColor: Colors.transparent,
-                overlayColor: isDark ? TColors.white : TColors.black,
               ),
             ),
             const SizedBox(width: TSizes.spaceBtwItems / 2),

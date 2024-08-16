@@ -12,70 +12,81 @@ import '../../../utils/constants/colors.dart';
 import '../../../utils/constants/image_strings.dart';
 import '../../../utils/constants/sizes.dart';
 import '../../../utils/helpers/helper_functions.dart';
+import '../../../utils/helpers/pricing_calculator.dart';
+import '../../../utils/popups/loaders.dart';
+import '../../controllers/product/cart_controller.dart';
+import '../../controllers/product/order_controller.dart';
 import '../cart/cart_items(checkoutscren).dart';
 
 class CheckoutScreen extends StatelessWidget {
-  const CheckoutScreen({super.key});
+  const CheckoutScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    final cartController = CartController.instance;
+    final subTotal = cartController.totalCartPrice.value;
+    final orderController = Get.put(OrderController());
+    final totalAmount = TPricingCalculator.calculateTotalPrice(subTotal, 'US');
     final dark = THelperFunctions.isDarkMode(context);
     return Scaffold(
-      appBar: TAppBar(
-        title: Text(
-          'Order Review',
-          style: Theme.of(context).textTheme.headlineSmall,
-        ),
-        showBackArrow: true,
-      ),
-      body:  SingleChildScrollView(
+      appBar: const TAppBar(title: Text('Order Review'), showBackArrow: true),
+      body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.all(TSizes.defaultSpace),
           child: Column(
+            mainAxisSize: MainAxisSize.min,
             children: [
-              const TCartItems(showAddRemoveButtons: false,),
-              const SizedBox(height: TSizes.spaceBtwSections,),
-              
+              /// -- Items in Cart
+              const TCartItems(showAddRemoveButtons: false),
+              const SizedBox(height: TSizes.spaceBtwSections),
+
+              /// -- Coupon TextField
               const TCouponCode(),
-              const SizedBox(height: TSizes.spaceBtwSections,),
+              const SizedBox(height: TSizes.spaceBtwSections),
 
+              /// -- Billing Section
               TRoundedContainer(
-                padding: const EdgeInsets.all(TSizes.md),
                 showBorder: true,
+                padding: const EdgeInsets.all(TSizes.md),
                 backgroundColor: dark ? TColors.black : TColors.white,
-                child: const Column(
+                child: Column(
                   children: [
-                    TBillingAmountSection(),
-                    SizedBox(height: TSizes.spaceBtwItems,),
+                    /// Pricing
+                    TBillingAmountSection(subTotal: subTotal),
+                    const SizedBox(height: TSizes.spaceBtwItems),
 
-                    Divider(),
-                    SizedBox(height: TSizes.spaceBtwItems,),
+                    /// Divider
+                    const Divider(),
+                    const SizedBox(height: TSizes.spaceBtwItems),
 
-                    TBillingPaymentSection(),
-                    SizedBox(height: TSizes.spaceBtwItems,),
+                    /// Payment Methods
+                    const TBillingPaymentSection(),
+                    const SizedBox(height: TSizes.spaceBtwSections),
 
-                    TBillingAddressSection()
-
-
+                    /// Address
+                    const TBillingAddressSection(),
                   ],
                 ),
-              )
+              ),
+              const SizedBox(height: TSizes.spaceBtwSections),
             ],
           ),
         ),
       ),
 
+      /// -- Checkout Button
       bottomNavigationBar: Padding(
-        padding:  const EdgeInsets.all(TSizes.defaultSpace),
-        child: ElevatedButton(onPressed: () => Get.to(() =>  SuccessScreen(
-          image: TImages.successfulPaymentIcon,
-          title: 'Payment success',
-          subTitle: 'Your item will be shipped soon',
-          onPressed: () => Get.offAll(() => const HomeMenu()),
-        ),),
-          child: const Text('Checkout \$1000.00'),),
+        padding: const EdgeInsets.all(TSizes.defaultSpace),
+        child: SizedBox(
+          width: double.infinity,
+          child: ElevatedButton(
+            onPressed: subTotal > 0
+                ? () => orderController.processOrder(totalAmount)
+                : () => TLoaders.warningSnackBar(title: 'Empty Cart', message: 'Add items in the cart in order to proceed.'),
+            child: Text('Checkout \$${totalAmount.toStringAsFixed(2)}'),
+          ),
+        ),
       ),
     );
   }
 }
-
