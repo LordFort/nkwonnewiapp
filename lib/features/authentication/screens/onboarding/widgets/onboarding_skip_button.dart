@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import '../../../../utils/constants/sizes.dart';
 import '../../../../utils/device/device_utility.dart';
 import '../../../controllers/onboarding_controller.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 
 class OnBoardingSkipButton extends StatelessWidget {
@@ -17,7 +18,7 @@ class OnBoardingSkipButton extends StatelessWidget {
       right: TSizes.defaultSpace,
       child: TextButton(
         onPressed: () => OnBoardingController.instance.skipPage(),
-        child: const Text('skip'),
+        child: Text( AppLocalizations.of(context)!.skip),
       ),
     );
   }

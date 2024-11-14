@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 import '../../../features/utils/constants/sizes.dart';
-import '../../../features/utils/constants/text_strings.dart';
-import '../../../features/utils/helpers/helper_functions.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+
 import '../../styles/spacing_styles.dart';
 
 class SuccessScreen extends StatelessWidget {
@@ -40,7 +40,7 @@ class SuccessScreen extends StatelessWidget {
                 width: double.infinity,
                 child: ElevatedButton(
                   onPressed: onPressed,
-                  child: const Text(TTexts.tContinue),
+                  child:  Text(AppLocalizations.of(context)!.tContinue),
                 ),
               ),
             ],

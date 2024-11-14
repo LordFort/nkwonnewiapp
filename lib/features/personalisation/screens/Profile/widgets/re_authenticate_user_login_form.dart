@@ -5,6 +5,8 @@ import '../../../../utils/constants/sizes.dart';
 import '../../../../utils/constants/text_strings.dart';
 import '../../../../utils/validators/validation.dart';
 import '../../../controllers/user_controller.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+
 
 class ReAuthLoginForm extends StatelessWidget {
   const ReAuthLoginForm({Key? key}) : super(key: key);
@@ -26,7 +28,7 @@ class ReAuthLoginForm extends StatelessWidget {
                 TextFormField(
                   controller: controller.verifyEmail,
                   validator: TValidator.validateEmail,
-                  decoration: const InputDecoration(prefixIcon: Icon(Iconsax.direct_right), labelText: TTexts.email),
+                  decoration:  InputDecoration(prefixIcon: Icon(Iconsax.direct_right), labelText: AppLocalizations.of(context)!.email),
                 ),
                 const SizedBox(height: TSizes.spaceBtwInputFields),
 
@@ -37,7 +39,7 @@ class ReAuthLoginForm extends StatelessWidget {
                     controller: controller.verifyPassword,
                     validator: (value) => TValidator.validateEmptyText('Password', value),
                     decoration: InputDecoration(
-                      labelText: TTexts.password,
+                      labelText: AppLocalizations.of(context)!.password,
                       prefixIcon: const Icon(Iconsax.password_check),
                       suffixIcon: IconButton(
                         onPressed: () => controller.hidePassword.value = !controller.hidePassword.value,

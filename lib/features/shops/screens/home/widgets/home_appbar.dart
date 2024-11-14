@@ -8,7 +8,8 @@ import '../../../../../common/widgets/shimmer/shimmer.dart';
 import '../../../../personalisation/controllers/user_controller.dart';
 import '../../../../personalisation/screens/Profile/widgets/profile.dart';
 import '../../../../utils/constants/colors.dart';
-import '../../../../utils/constants/text_strings.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+
 
 class THomeAppBar extends StatelessWidget {
   const THomeAppBar({
@@ -25,11 +26,10 @@ class THomeAppBar extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(TTexts.homeAppbarTitle, style: Theme
-                .of(context)
-                .textTheme
-                .labelMedium!
-                .apply(color: TColors.grey)),
+            Text(
+              AppLocalizations.of(context)!.homeAppbarTitle, // Use the localized string
+              style: Theme.of(context).textTheme.labelMedium!.apply(color: TColors.grey),
+            ),
             Obx(
                   () {
                 // Check if user Profile is still loading

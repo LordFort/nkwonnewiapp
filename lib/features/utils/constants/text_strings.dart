@@ -59,11 +59,44 @@ class TTexts {
 
 
   // -- Product
-  static const String popularProducts = "Popular Products";
+  static const String popularProducts = "Top Products";
 
   // -- Home
   static const String homeAppbarTitle = "Good day for shopping,";
   static const String homeAppbarSubTitle = "Fortunate Uchendu";
+  static const String searchProductsBrandsandCategories  = "Search Nkwo Market...";
+  static const String exploreCategories  = "Explore Top Categories";
+  static const String account  = "Account";
+  static const String accountSettings  = "Account Settngs";
+  static const String myAddresses  = "My Addresses";
+  static const String shoppingAddress  = "Set shopping delivery address";
+  static const String myCart  = "My Cart";
+  static const String myCartSubtitle  = "Add, remove products and move to checkout";
+  static const String myOrders  = "My Orders";
+  static const String ordersSubtitle  = "In-progress and Completed Orders";
+
+  static const String bankAccount  = "Bank Account";
+  static const String bankAccountSubtitle  = "Withdraw balance to registered bank account";
+  static const String myCoupons  = "My Coupons";
+  static const String myCouponSubtitle  = "List of all the discounted coupons";
+  static const String notifications  = "Notifications";
+  static const String notificationsSubtitle  = "Set any kind of notification message";
+  static const String accountPrivacy  = "Account Privacy";
+  static const String accountPrivacySubtitle  = "Manage data usage and connected accounts";
+  static const String appSettings  = "App Settings";
+
+  static const String loadData  = "Load Data";
+  static const String loadSubtitle  = "Upload Data to your Cloud Firebase";
+  static const String geolocation  = "Geolocation";
+  static const String geolocationSubtitle  = "Set recommendation based on location";
+
+  static const String safeMode  = "Safe Mode";
+  static const String safeModeSubtitle  = "Search result is safe for all ages";
+
+  static const String hdImage  = "HD Image Quality";
+  static const String hdImageSubtitle  = "Set image quality to be seen";
+
+  static const String logout  = "Logout";
 
 
 }

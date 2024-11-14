@@ -9,6 +9,7 @@ import '../../../../../common/widgets/texts/section_heading.dart';
 import '../../../../utils/constants/colors.dart';
 import '../../../../utils/constants/sizes.dart';
 import '../../../controllers/categories_controller.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 
 class THomeCategories extends StatelessWidget {
@@ -19,12 +20,16 @@ class THomeCategories extends StatelessWidget {
     final categoryController = Get.put(CategoryController());
 
     return Padding(
-      padding: const EdgeInsets.only(left: TSizes.defaultSpace),
+      padding:  EdgeInsets.only(left: TSizes.defaultSpace),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           /// -- Heading
-          const TSectionHeading(title: 'Popular Categories', textColor: TColors.white, showActionButton: false),
+           TSectionHeading(
+            title: AppLocalizations.of(context)!.exploreCategories, // Use the localized string
+            textColor: TColors.white,
+            showActionButton: false,
+          ),
           const SizedBox(height: TSizes.spaceBtwItems),
 
           /// Obx widget for reactive UI updates based on the state of [categoryController].
@@ -43,7 +48,7 @@ class THomeCategories extends StatelessWidget {
                 /// Data Found
                 // Display a horizontal list of featured categories with images and text
                 return SizedBox(
-                  height: 80,
+                  height: 120,
                   child: ListView.builder(
                     shrinkWrap: true,
                     itemCount: categoryController.featuredCategories.length,

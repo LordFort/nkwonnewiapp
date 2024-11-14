@@ -1,6 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 
-class BrandModel {
+class  BrandModel {
   String id;
   String name;
   String image;

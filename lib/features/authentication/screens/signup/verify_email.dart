@@ -7,6 +7,7 @@ import '../../../utils/constants/sizes.dart';
 import '../../../utils/constants/text_strings.dart';
 import '../../../utils/helpers/helper_functions.dart';
 import '../../controllers/verify_email_controller.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class VerifyEmailScreen extends StatelessWidget {
   const VerifyEmailScreen({super.key, this.email});
@@ -35,7 +36,7 @@ class VerifyEmailScreen extends StatelessWidget {
                 height: TSizes.spaceBtwSections,
               ),
               Text(
-                TTexts.confirmEmail,
+                AppLocalizations.of(context)!.confirmEmail,
                 style: Theme.of(context).textTheme.headlineMedium,
                 textAlign: TextAlign.center,
               ),
@@ -45,7 +46,7 @@ class VerifyEmailScreen extends StatelessWidget {
               Text(email ?? '', style: Theme.of(context).textTheme.labelLarge, textAlign: TextAlign.center),
               const SizedBox(height: TSizes.spaceBtwItems),
               Text(
-                TTexts.confirmEmailSubTitle,
+                AppLocalizations.of(context)!.confirmEmailSubTitle,
                 style: Theme.of(context).textTheme.labelMedium,
                 textAlign: TextAlign.center,
               ),

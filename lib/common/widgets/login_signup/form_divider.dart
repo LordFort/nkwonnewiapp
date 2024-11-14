@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 import '../../../features/utils/constants/colors.dart';
 import '../../../features/utils/constants/text_strings.dart';
 import '../../../features/utils/helpers/helper_functions.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class TFormDivider extends StatelessWidget {
   const TFormDivider({super.key, required this.dividerText});
@@ -23,7 +24,7 @@ class TFormDivider extends StatelessWidget {
               indent: 60,
               endIndent: 5,
             )),
-        Text(TTexts.orSignInWith.capitalize!,
+        Text(AppLocalizations.of(context)!.orSignInWith.capitalize!,
             style: Theme.of(context).textTheme.labelMedium),
         Flexible(
           child: Divider(

@@ -36,7 +36,7 @@ class TProductMetaData extends StatelessWidget {
               Row(
                 children: [
                   TRoundedContainer(
-                    backgroundColor: TColors.secondary,
+                    backgroundColor: TColors.primary,
                     radius: TSizes.sm,
                     padding: const EdgeInsets.symmetric(horizontal: TSizes.sm, vertical: TSizes.xs),
                     child: Text('$salePercentage%',
@@ -80,7 +80,6 @@ class TProductMetaData extends StatelessWidget {
               height: 32,
               isNetworkImage: true,
               image: product.brand!.image,
-              overlayColor: darkMode ? TColors.white : TColors.black,
             ),
             TBrandTitleWithVerifiedIcon(title: product.brand!.name, brandTextSize: TextSizes.medium),
           ],

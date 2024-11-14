@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 import '../../../../utils/constants/colors.dart';
 import '../../../../utils/constants/image_strings.dart';
@@ -22,11 +22,11 @@ class TLoginHeader extends StatelessWidget {
         Image(
           height: 150,
           image: AssetImage(
-              dark ? TImages.lightAppLogo : TImages.darkAppLogo),
+              dark ? TImages.nkwoAppLogo : TImages.nkwoAppLogo),
         ),
 
         Text(
-          TTexts.loginTitle,
+          AppLocalizations.of(context)!.loginTitle,
           style: Theme.of(context).textTheme.headlineMedium,
         ),
         Divider(
@@ -37,7 +37,7 @@ class TLoginHeader extends StatelessWidget {
         ),
         const SizedBox(height: TSizes.sm),
         Text(
-          TTexts.loginSubTitle,
+          AppLocalizations.of(context)!.loginSubTitle,
           style: Theme.of(context).textTheme.bodyMedium,
         ),
       ],

@@ -2,21 +2,14 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:sparvoll_the_app/features/authentication/controllers/forget_password/forget_password_controller.dart';
-import 'package:sparvoll_the_app/features/authentication/controllers/forget_password/forget_password_controller.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 import '../../../../common/widgets/App_bar/appbar.dart';
 import '../../../utils/constants/image_strings.dart';
 import '../../../utils/constants/sizes.dart';
 import '../../../utils/constants/text_strings.dart';
 import '../../../utils/helpers/helper_functions.dart';
-import '../../controllers/forget_password/forget_password_controller.dart';
 
-import '../../controllers/forget_password/forget_password_controller.dart';
-import '../../controllers/forget_password/forget_password_controller.dart';
-import '../../controllers/forget_password/forget_password_controller.dart';
-import '../../controllers/forget_password/forget_password_controller.dart';
-import '../../controllers/forget_password/forget_password_controller.dart';
-import '../../controllers/forget_password/forget_password_controller.dart';
 import '../login/login.dart';
 
 class ResetPasswordScreen extends StatelessWidget {
@@ -47,12 +40,12 @@ class ResetPasswordScreen extends StatelessWidget {
               const SizedBox(height: TSizes.spaceBtwSections),
 
               /// Title & SubTitle
-              Text(TTexts.changeYourPasswordTitle, style: Theme.of(context).textTheme.headlineMedium, textAlign: TextAlign.center),
+              Text(AppLocalizations.of(context)!.changeYourPasswordTitle, style: Theme.of(context).textTheme.headlineMedium, textAlign: TextAlign.center),
               const SizedBox(height: TSizes.spaceBtwItems),
-              Text('mrtaimoorsikander@gmail.com', textAlign: TextAlign.center, style: Theme.of(context).textTheme.labelLarge),
+              Text('sparvollinc@gmail.com', textAlign: TextAlign.center, style: Theme.of(context).textTheme.labelLarge),
               const SizedBox(height: TSizes.spaceBtwItems),
               Text(
-                TTexts.changeYourPasswordSubTitle,
+                AppLocalizations.of(context)!.changeYourPasswordSubTitle,
                 textAlign: TextAlign.center,
                 style: Theme.of(context).textTheme.labelMedium,
               ),
@@ -63,7 +56,7 @@ class ResetPasswordScreen extends StatelessWidget {
               const SizedBox(height: TSizes.spaceBtwItems),
               SizedBox(
                   width: double.infinity,
-                  child: TextButton(onPressed: () => controller.resendPasswordResetEmail(email), child: const Text(TTexts.resendEmail))),
+                  child: TextButton(onPressed: () => controller.resendPasswordResetEmail(email), child:  Text(AppLocalizations.of(context)!.resendEmail))),
             ],
           ),
         ),

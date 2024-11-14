@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "575865866563",
+    "project_id": "nkwo-nnewi-initio",
+    "storage_bucket": "nkwo-nnewi-initio.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:575865866563:android:c43075d950f928039447f6",
+        "android_client_info": {
+          "package_name": "com.example.sparvoll_the_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "575865866563-r3ls0an1g47dclu352k5eblhsc435529.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDsQOM__z8hmT9nAivzqAhEzY6LAFnGtuc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "575865866563-r3ls0an1g47dclu352k5eblhsc435529.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "575865866563-3gk5r620h2vbeientppaik3062fh9phf.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.sparvollTheApp"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

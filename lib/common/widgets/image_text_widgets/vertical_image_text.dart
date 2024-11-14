@@ -45,16 +45,16 @@ class TVerticalImageAndText extends StatelessWidget {
         child: Column(
           children: [
             TCircularImage(
-              width: 56,
-              height: 56,
+              width: 85,
+              height: 82,
               image: image,
-              fit: BoxFit.fitWidth,
-              padding: TSizes.sm * 1.1,
+              fit: BoxFit.cover,
+              padding: TSizes.sm * 0.1,
               isNetworkImage: isNetworkImage,
               backgroundColor: backgroundColor != null? TColors.white: TColors.white
             ),
             const SizedBox(height: TSizes.spaceBtwItems / 2),
-            SizedBox(width: 65, child: TBrandTitleText(title: title, color: textColor, maxLines: 1, )),
+            SizedBox(width: 100, child: TBrandTitleText(title: title, color: textColor, maxLines: 1, )),
           ],
         ),
       ),

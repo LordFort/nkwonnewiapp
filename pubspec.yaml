@@ -12,10 +12,12 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+  intl: ^0.18.1
 
     #....Utility Packages....#
   http: ^0.13.6
-  intl: ^0.18.1
   logger: ^2.0.2+1
   url_launcher: ^6.2.1
   flutter_native_splash: ^2.3.5
@@ -28,6 +30,7 @@ dependencies:
   cached_network_image: ^3.3.0
   wakelock_plus: ^1.1.3 #Only being used in the Dummy Data Uploader to keep screen on.
   flutter_paypal_checkout: ^1.0.1
+  flutter_paypal_native: ^2.1.0
 
 
   # Icons
@@ -63,10 +66,17 @@ dev_dependencies:
 
 
   flutter_lints: ^3.0.0
+  flutter_launcher_icons: ^0.13.1
+
+flutter_launcher_icons:
+    android: "launcher_icon"
+    ios: true
+    image_path: "assets/icon/icon.png"
+    min_sdk_android: 21
 
 
 flutter:
-
+  generate: true
   uses-material-design: true
 
   #--------------- LOCAL ASSETS ------------------#

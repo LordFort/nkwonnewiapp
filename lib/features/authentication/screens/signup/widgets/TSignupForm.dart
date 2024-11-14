@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
@@ -7,7 +8,8 @@ import '../../../../utils/Validators/validation.dart';
 import '../../../../utils/constants/sizes.dart';
 import '../../../../utils/constants/text_strings.dart';
 import '../../../controllers/sign_up/signup_controller.dart';
-import '../verify_email.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+
 
 
 class TSignupForm extends StatelessWidget {
@@ -29,8 +31,8 @@ class TSignupForm extends StatelessWidget {
                   controller: controller.firstName,
                   validator: (value) => TValidator.validateEmptyText('First name', value),
                   expands: false,
-                  decoration: const InputDecoration(
-                    labelText: TTexts.firstName,
+                  decoration: InputDecoration(
+                    labelText: AppLocalizations.of(context)!.firstName,
                     prefixIcon: Icon(Iconsax.user),
                   ),
                 ),
@@ -41,8 +43,8 @@ class TSignupForm extends StatelessWidget {
                   controller: controller.lastName,
                   validator: (value) => TValidator.validateEmptyText('Last name', value),
                   expands: false,
-                  decoration: const InputDecoration(
-                    labelText: TTexts.lastName,
+                  decoration:  InputDecoration(
+                    labelText: AppLocalizations.of(context)!.lastName,
                     prefixIcon: Icon(Iconsax.user),
                   ),
                 ),
@@ -54,8 +56,8 @@ class TSignupForm extends StatelessWidget {
             controller: controller.username,
             validator: TValidator.validateUsername,
             expands: false,
-            decoration: const InputDecoration(
-              labelText: TTexts.username,
+            decoration:  InputDecoration(
+              labelText: AppLocalizations.of(context)!.username,
               prefixIcon: Icon(Iconsax.user_edit),
             ),
           ),
@@ -63,8 +65,8 @@ class TSignupForm extends StatelessWidget {
           TextFormField(
             controller: controller.email,
             validator: TValidator.validateEmail,
-            decoration: const InputDecoration(
-              labelText: TTexts.email,
+            decoration:  InputDecoration(
+              labelText: AppLocalizations.of(context)!.email,
               prefixIcon: Icon(Iconsax.direct),
             ),
           ),
@@ -74,8 +76,8 @@ class TSignupForm extends StatelessWidget {
           TextFormField(
             controller: controller.phoneNumber,
             validator: TValidator.validatePhoneNumber,
-            decoration: const InputDecoration(
-              labelText: TTexts.phoneNo,
+            decoration:  InputDecoration(
+              labelText: AppLocalizations.of(context)!.phoneNo,
               prefixIcon: Icon(Iconsax.call),
             ),
           ),
@@ -88,7 +90,7 @@ class TSignupForm extends StatelessWidget {
               validator: (value) => TValidator.validatePassword(value),
               obscureText: controller.hidePassword.value,
               decoration: InputDecoration(
-                labelText: TTexts.password,
+                labelText: AppLocalizations.of(context)!.password,
                 prefixIcon: const Icon(Iconsax.password_check),
                 suffixIcon: IconButton(
                   onPressed: () => controller.hidePassword.value = !controller.hidePassword.value,
@@ -100,7 +102,7 @@ class TSignupForm extends StatelessWidget {
           const SizedBox(
             height: TSizes.spaceBtwSections,
           ),
-          const TTermsandConditionCheckbox(),
+          SingleChildScrollView(child: const TTermsandConditionCheckbox()),
           const SizedBox(
             height: TSizes.spaceBtwSections,
           ),
@@ -108,7 +110,7 @@ class TSignupForm extends StatelessWidget {
             width: double.infinity,
             child: ElevatedButton(
               onPressed: () => controller.signup(),
-              child: const Text(TTexts.createAccount),
+              child:  Text(AppLocalizations.of(context)!.createAccount),
             ),
           )
         ],

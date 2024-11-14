@@ -30,7 +30,7 @@ class SubCategoriesScreen extends StatelessWidget {
           child: Column(
             children: [
               /// Banner
-              const TRoundedImage(width: double.infinity, imageUrl: TImages.promoBanner3, applyImageRadius: true),
+              const TRoundedImage(width: double.infinity, imageUrl: TImages.banner1, applyImageRadius: true),
               const SizedBox(height: TSizes.spaceBtwSections),
 
               /// Sub Categories

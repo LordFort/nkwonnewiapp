@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import '../../../../common/widgets/login_signup/form_divider.dart';
 import '../../../../common/widgets/login_signup/social_buttons.dart';
 import '../../../utils/constants/sizes.dart';
@@ -22,14 +22,14 @@ class SignupScreen extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 /// Title
-                Text(TTexts.signupTitle,
+                Text(AppLocalizations.of(context)!.signupTitle,
                     style: Theme.of(context).textTheme.headlineMedium),
                 const SizedBox(height: TSizes.spaceBtwSections),
 
                 /// Form
                 const TSignupForm(),
                 const SizedBox(height: TSizes.spaceBtwSections,),
-                TFormDivider(dividerText: TTexts.orSignInWith.capitalize! ),
+                TFormDivider(dividerText: AppLocalizations.of(context)!.orSignInWith.capitalize! ),
                 const SizedBox(height: TSizes.spaceBtwSections,),
                 const TSocialButtons()
               ],

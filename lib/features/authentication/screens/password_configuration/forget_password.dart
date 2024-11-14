@@ -9,6 +9,7 @@ import '../../../utils/Validators/validation.dart';
 import '../../../utils/constants/sizes.dart';
 import '../../../utils/constants/text_strings.dart';
 import '../../controllers/forget_password/forget_password_controller.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class ForgetPasswordScreen extends StatelessWidget {
   const ForgetPasswordScreen({super.key});
@@ -25,9 +26,9 @@ class ForgetPasswordScreen extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             /// Headings
-            Text(TTexts.forgetPasswordTitle, style: Theme.of(context).textTheme.headlineMedium),
+            Text(AppLocalizations.of(context)!.forgetPasswordTitle, style: Theme.of(context).textTheme.headlineMedium),
             const SizedBox(height: TSizes.spaceBtwItems),
-            Text(TTexts.forgetPasswordSubTitle, style: Theme.of(context).textTheme.labelMedium),
+            Text(AppLocalizations.of(context)!.forgetPasswordSubTitle, style: Theme.of(context).textTheme.labelMedium),
             const SizedBox(height: TSizes.spaceBtwSections * 2),
 
             /// Text field
@@ -44,7 +45,7 @@ class ForgetPasswordScreen extends StatelessWidget {
             /// Submit Button
             SizedBox(
               width: double.infinity,
-              child: ElevatedButton(onPressed: () => controller.sendPasswordResetEmail(), child: const Text(TTexts.submit)),
+              child: ElevatedButton(onPressed: () => controller.sendPasswordResetEmail(), child:  Text(AppLocalizations.of(context)!.submit)),
             ),
           ],
         ),

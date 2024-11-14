@@ -15,6 +15,8 @@ import '../../../utils/constants/text_strings.dart';
 import '../../../utils/device/device_utility.dart';
 import '../../controllers/product/product_controller.dart';
 import '../all_products/all_products.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -27,7 +29,7 @@ class HomeScreen extends StatelessWidget {
         child: Column(
           children: [
             /// Header
-            const TPrimaryHeaderContainer(
+             TPrimaryHeaderContainer(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -36,7 +38,10 @@ class HomeScreen extends StatelessWidget {
                   SizedBox(height: TSizes.spaceBtwSections),
 
                   /// -- Searchbar
-                  TSearchContainer(text: 'Search in Store', showBorder: false),
+                  TSearchContainer(
+                    text: AppLocalizations.of(context)!.searchProductsBrandsandCategories, // Use the localized string
+                    showBorder: false,
+                  ),
                   SizedBox(height: TSizes.spaceBtwSections),
 
                   /// -- Categories
@@ -58,10 +63,10 @@ class HomeScreen extends StatelessWidget {
 
                   /// -- Products Heading
                   TSectionHeading(
-                    title: TTexts.popularProducts,
+                    title: AppLocalizations.of(context)!.popularProducts,
                     onPressed: () => Get.to(
                           () => AllProducts(
-                        title: TTexts.popularProducts,
+                        title: AppLocalizations.of(context)!.popularProducts,
                         futureMethod: ProductRepository.instance.getAllFeaturedProducts(),
                       ),
                     ),
